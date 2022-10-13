@@ -66,9 +66,9 @@ jobs:
         if: ${{ steps.compute-tag.outputs.result != 'FALSE' }}
         with:
           context: .
-          build-args:
-            - "BUILDER_IMAGE=swift:jammy"
-            - "RUNTIME_IMAGE=swift:jammy"
+          build-args: |
+            "BUILDER_IMAGE=swift:jammy"
+            "RUNTIME_IMAGE=swift:jammy"
           tags: |
             ls1tum/swift-swiftlint:${{ steps.compute-tag.outputs.result }}
             ghcr.io/ls1intum/swift-swiftlint:${{ steps.compute-tag.outputs.result }}
